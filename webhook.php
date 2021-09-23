@@ -62,7 +62,5 @@ function reply_message_2($url, $post_header, $post_body)
 	
 	return $result;
 }
-
 echo "220 OK!!";
-
 ?>

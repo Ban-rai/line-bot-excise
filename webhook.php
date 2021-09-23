@@ -14,23 +14,10 @@ foreach ($request_json['events'] as $event)
 		{
 			$text = $event['message']['text'];
 			
-			if(($text == "คุณเป็นสัตว์กินเนื้อหรือเปล่า") || ($text == "คุณเป็นสัตว์เลือดเย็นหรือเปล่า") ){
-				$number = rand(0,1);
-				if($number == 0){
-					$reply_message = 'ใช่ฮะ เราเป็นแบบนั้นแหละ'; 
-				}else{
-					$reply_message = 'อยากลองดูไหมละ หึหึ'; 
-				}
-				
-			}else{
-				$reply_message = 'อ่านละนะ "'. $text.'" รอสักครู่ฮะ';
-			}			
-		} else {
-			$reply_message = 'อ่านละนะ "'.$event['message']['type'].'" รอสักครู่ฮะ';
-		}
-		
+			$reply_message = 'ฉันได้รับ "'.$event['message']['type'].'" ของคุณแล้ว!';		
+		} 		
 	} else {
-		$reply_message = 'อ่านละนะ Event "'.$event['type'].'" รอสักครู่ฮะ';
+		$reply_message = 'ฉันได้รับ Event "'.$event['type'].'" ของคุณแล้ว!';
 	}
 	
 	// reply message
@@ -79,15 +66,3 @@ function reply_message_2($url, $post_header, $post_body)
 echo "220 OK!!";
 
 ?>
-© 2021 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
